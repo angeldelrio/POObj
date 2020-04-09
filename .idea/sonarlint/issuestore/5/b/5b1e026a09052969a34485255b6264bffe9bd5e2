@@ -1,8 +1,6 @@
 
 U
 java:S1068"3Remove this unused "servicioPedidos" private field.(Ë«Õöøÿÿÿÿ8å¹¡Ñ”.
-j	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëöìè8•š®Ñ”.
-R
-java:S1068"5Remove this unused "servicioEmpleados" private field.(ãï—ù8¬Ø¦Ñ”.
 U
 java:S1068"3Remove this unused "servicioMuebles" private field.(×·ÏÆşÿÿÿÿ8¬Ø¦Ñ”.
+j	java:S100*"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëöìè8•š®Ñ”.

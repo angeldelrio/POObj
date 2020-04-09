@@ -8,8 +8,7 @@ package com.arturobarba.poo.modelo.persona.empleado.artesano;
  */
 public class ArtesanoPlantilla extends Artesano
 {
-
-    public String toString() {
-        return "(Artesano Plantilla)" + super.toString();
+    public ArtesanoPlantilla() {
+        super(TipoArtesano.ARTESANO_EN_PLANTILLA);
     }
 }

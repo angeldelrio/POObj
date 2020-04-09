@@ -13,7 +13,25 @@ import java.util.*;
  */
 public abstract class Artesano extends Empleado
 {
+    public enum TipoArtesano {
+        ARTESANO_EN_PLANTILLA, ARTESANO_POR_HORAS;
+    }
+
     private Pedido pedidoAsignado;
+    private TipoArtesano tipoArtesano;
+
+    public Artesano(TipoArtesano tipoArtesano) {
+        super(TipoEmpleado.ARTESANO);
+        this.tipoArtesano = tipoArtesano;
+    }
+
+    public TipoArtesano getTipoArtesano() {
+        return tipoArtesano;
+    }
+
+    public void setTipoArtesano(TipoArtesano tipoArtesano) {
+        this.tipoArtesano = tipoArtesano;
+    }
 
     public Pedido getPedidoAsignado() {
         return pedidoAsignado;
@@ -21,5 +39,14 @@ public abstract class Artesano extends Empleado
 
     public void setPedidoAsignado(Pedido pedidoAsignado) {
         this.pedidoAsignado = pedidoAsignado;
+    }
+
+    public boolean tienePedidoAsignado() {
+        return getPedidoAsignado() != null;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Pedido asignado: " + (tienePedidoAsignado() ? getPedidoAsignado().getId() : "Ninguno");
     }
 }

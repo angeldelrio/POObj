@@ -28,25 +28,25 @@ public class FormularioEditarCliente extends AbstractFormulario {
         Entrada.reset();
         Salida.println("Nombre:");
         String nombre = Entrada.getString();
-        if (!StringUtils.isBlank(nombre)) {
+        if (!StringUtils.estaEnBlanco(nombre)) {
             empleadoEditado.setNombre(nombre);
         }
 
         Salida.println("Teléfono:");
         String telefono = Entrada.getString();
-        if (!StringUtils.isBlank(telefono)) {
-            empleadoEditado.setTelefono(telefono);
+        if (!StringUtils.estaEnBlanco(telefono)) {
+            empleadoEditado.ge(telefono);
         }
 
         Salida.println("IBAN:");
         String iban = Entrada.getString();
-        if (!StringUtils.isBlank(iban)) {
+        if (!StringUtils.estaEnBlanco(iban)) {
             empleadoEditado.setIban(iban);
         }
 
         Salida.println("NIF:");
         String nif = Entrada.getString();
-        if (!StringUtils.isBlank(nif)) {
+        if (!StringUtils.estaEnBlanco(nif)) {
             empleadoEditado.setNif(nif);
         }
     }

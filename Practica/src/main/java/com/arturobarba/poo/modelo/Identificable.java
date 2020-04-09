@@ -13,4 +13,9 @@ public abstract class Identificable {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return String.format("#%s", getId());
+    }
 }

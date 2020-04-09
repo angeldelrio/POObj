@@ -8,19 +8,28 @@ package com.arturobarba.poo.modelo.persona.empleado.artesano;
  */
 public class ArtesanoHora extends Artesano
 {
-    private Integer horasContrato;
+    private Integer horasDeTrabajo;
 
-    public ArtesanoHora() {}
-
-    public Integer getHorasContrato() {
-        return horasContrato;
+    public ArtesanoHora() {
+        super(TipoArtesano.ARTESANO_POR_HORAS);
     }
 
-    public void setHorasContrato(Integer horasContrato) {
-        this.horasContrato = horasContrato;
+    public Integer getHorasDeTrabajo() {
+        return horasDeTrabajo;
     }
 
+    public void setHorasDeTrabajo(Integer horasDeTrabajo) {
+        this.horasDeTrabajo = horasDeTrabajo;
+    }
+
+    @Override
     public String toString() {
-        return "(Artesano por horas)" + super.toString();
+        String salida = super.toString();
+
+        if (horasDeTrabajo != null) {
+            salida += String.format(" Horas de trabajo: %s", getHorasDeTrabajo());
+        }
+
+        return salida;
     }
 }

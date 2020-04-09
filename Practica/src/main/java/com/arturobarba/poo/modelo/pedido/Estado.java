@@ -8,5 +8,5 @@ package com.arturobarba.poo.modelo.pedido;
  */
 public enum Estado
 {
-    PENDIENTE, FABRICACION, RECOGER, ENTREGAR, FINALIZADO, FALTAN_PIEZAS
+    PENDIENTE, EN_FABRICACION, FINALIZADO, INCIDENCIA;
 }

@@ -19,23 +19,21 @@ public class Pedido extends Identificable
     // instance variables - replace the example below with your own
     private Cliente cliente;
     private Comercial comercial;
-    private ArrayList<Mueble> muebles;
+    private final List<Mueble> muebles;
     private Estado estado;
 
     /**
      * Constructor for objects of class Pedido
      */
-    public Pedido(List<Mueble> muebles, Cliente cliente)
+    public Pedido()
     {
-        muebles = new ArrayList <>(muebles);
+        muebles = new ArrayList <>();
         this.estado = Estado.PENDIENTE;
-        this.cliente = cliente;
     }
 
-    public double getPrecio() {
-        double total = 0;
+    public double getImporte() {
+        float total = 0;
         Iterator<Mueble> iter  = muebles.iterator();
-        Mueble mueble;
         while (iter.hasNext()) { 
             total += iter.next().getPrecio();
         }

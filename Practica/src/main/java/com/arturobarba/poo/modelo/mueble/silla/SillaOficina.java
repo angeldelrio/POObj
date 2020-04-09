@@ -1,7 +1,6 @@
 package com.arturobarba.poo.modelo.mueble.silla;
 
-import com.arturobarba.poo.modelo.mueble.caracteristicas.Color;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
+import com.arturobarba.poo.utils.StringUtils;
 
 /**
  * Write a description of class SillaOficina here.
@@ -11,12 +10,19 @@ import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
  */
 public abstract class SillaOficina extends Silla
 {
-    public SillaOficina(double precio, Color color,
-        TipoMadera tipoMadera) {
-        super(precio, color, tipoMadera);
+    private boolean tieneRuedas;
+
+    public SillaOficina(boolean tieneRuedas) {
+        super(TipoSilla.SILLA_DE_OFICINA);
+        this.tieneRuedas = tieneRuedas;
     }
 
+    public boolean tieneRuedas() {
+        return tieneRuedas;
+    }
+
+    @Override
     public String toString() {
-        return super.toString()+ "Silla destinada para oficinas.";
+        return super.toString() + String.format(" Tiene ruedas: %s", StringUtils.normalizeBoolean(tieneRuedas()));
     }
 }

@@ -1,6 +1,7 @@
 package com.arturobarba.poo.modelo.persona.empleado;
 
 import com.arturobarba.poo.modelo.persona.Persona;
+import com.arturobarba.poo.utils.StringUtils;
 
 /**
  * Abstract class Empleado - write a description of the class here
@@ -10,22 +11,21 @@ import com.arturobarba.poo.modelo.persona.Persona;
  */
 public abstract class Empleado extends Persona
 {
-    private Integer horasContrato;
+    public enum TipoEmpleado {
+        JEFE, COMERCIAL, ARTESANO;
+
+        @Override
+        public String toString() {
+            return StringUtils.normalizarEnum(this);
+        }
+    }
+
     private Integer salario;
+    private TipoEmpleado tipoEmpleado;
 
-    public Empleado() {}
-
-    public Empleado(String nombre) {
-       super(nombre);
-
-    }
-
-    public Integer getHorasContrato() {
-        return horasContrato;
-    }
-
-    public void setHorasContrato(Integer horasContrato) {
-        this.horasContrato = horasContrato;
+    public Empleado(TipoEmpleado tipoEmpleado) {
+        super(TipoPersona.EMPLEADO);
+        this.tipoEmpleado = tipoEmpleado;
     }
 
     public Integer getSalario() {
@@ -36,7 +36,18 @@ public abstract class Empleado extends Persona
         this.salario = salario;
     }
 
+    public TipoEmpleado getTipoEmpleado() {
+        return tipoEmpleado;
+    }
+
+    @Override
     public String toString() {
-        return super.toString() + "Horas Contrato: " + getHorasContrato() + ". Salario: " + getSalario();
+        String salida = super.toString();
+
+        if (getSalario() != null) {
+            salida += String.format(" Salario: %s€", getSalario());
+        }
+
+        return salida;
     }
 }

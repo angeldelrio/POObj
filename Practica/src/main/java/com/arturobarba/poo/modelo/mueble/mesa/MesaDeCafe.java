@@ -1,8 +1,5 @@
 package com.arturobarba.poo.modelo.mueble.mesa;
 
-import com.arturobarba.poo.modelo.mueble.caracteristicas.Color;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
-
 /**
  * Write a description of class MesaDeCafe here.
  * 
@@ -11,12 +8,18 @@ import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
  */
 public abstract class MesaDeCafe extends Mesa
 {
-    public MesaDeCafe(double precio, Color color,
-        TipoMadera tipoMadera) {
-        super(precio, color, tipoMadera);
+    public enum Material {
+        CRISTAL, MADERA;
     }
 
-    public String toString() {
-        return super.toString() + " Destinada para tomar café.";
+    private Material material;
+
+    public MesaDeCafe(Material material) {
+        super(TipoMesa.MESA_DE_CAFE);
+        this.material = material;
+    }
+
+    public Material getMaterial() {
+        return material;
     }
 }

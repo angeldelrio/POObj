@@ -1,8 +1,5 @@
 package com.arturobarba.poo.modelo.mueble.silla;
 
-import com.arturobarba.poo.modelo.mueble.caracteristicas.Color;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
-
 /**
  * Write a description of class SillaCocina here.
  * 
@@ -11,12 +8,7 @@ import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
  */
 public class SillaCocina extends Silla
 {
-    public SillaCocina(double precio, Color color,
-        TipoMadera tipoMadera) {
-        super(precio, color, tipoMadera);
-    }
-
-    public String toString() {
-        return super.toString()+ "Silla destinada para cocinas.";
+    public SillaCocina() {
+        super(TipoSilla.SILLA_DE_COCINA);
     }
 }

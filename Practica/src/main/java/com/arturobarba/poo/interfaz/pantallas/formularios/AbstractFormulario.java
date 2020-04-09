@@ -2,6 +2,8 @@ package com.arturobarba.poo.interfaz.pantallas.formularios;
 
 import com.arturobarba.poo.interfaz.Entrada;
 import com.arturobarba.poo.interfaz.Interfaz;
+import com.arturobarba.poo.interfaz.Salida;
+import com.arturobarba.poo.utils.StringUtils;
 
 public abstract class AbstractFormulario implements Formulario {
     private boolean debeSalir = false;
@@ -12,9 +14,9 @@ public abstract class AbstractFormulario implements Formulario {
             rellenarCampos();
             guardarDatos();
 
-            System.out.println("¿Desea añadir otro? s/N");
+            Salida.println("¿Desea añadir otro? s/N");
             String respuesta = Entrada.getString();
-            if (respuesta != null && !"s".equalsIgnoreCase(respuesta) && !respuesta.trim().isEmpty()) {
+            if (!StringUtils.estaEnBlanco(respuesta) && !"s".equalsIgnoreCase(respuesta)) {
                 debeSalir = true;
             }
             resetCampos();

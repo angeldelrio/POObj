@@ -1,8 +1,5 @@
 package com.arturobarba.poo.modelo.mueble.silla;
 
-import com.arturobarba.poo.modelo.mueble.caracteristicas.Color;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
-
 /**
  * Write a description of class SillaPlegable here.
  * 
@@ -11,12 +8,8 @@ import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
  */
 public class SillaPlegable extends Silla
 {
-    public SillaPlegable(double precio, Color color,
-        TipoMadera tipoMadera) {
-        super(precio, color, tipoMadera);
+    public SillaPlegable() {
+        super(TipoSilla.SILLA_PLEGABLE);
     }
 
-    public String toString() {
-        return super.toString()+ "Silla plegable.";
-    }
 }

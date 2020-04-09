@@ -8,7 +8,7 @@ package com.arturobarba.poo.modelo.persona.empleado;
  */
 public class Comercial extends Empleado
 {
-    public String toString() {
-        return super.toString() + ". Puesto: comercial";
+    public Comercial() {
+        super(TipoEmpleado.COMERCIAL);
     }
 }

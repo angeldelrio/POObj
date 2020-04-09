@@ -1,8 +1,6 @@
 package com.arturobarba.poo.modelo.mueble.silla;
 
 import com.arturobarba.poo.modelo.mueble.Mueble;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.Color;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
 
 /**
  * Write a description of class Silla here.
@@ -12,13 +10,19 @@ import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
  */
 public abstract class Silla extends Mueble
 {
-
-    public Silla(double precio, Color color,
-        TipoMadera tipoMadera) {
-        super(precio, color, tipoMadera);
+    public enum TipoSilla {
+        SILLA_DE_COCINA, SILLA_DE_OFICINA, SILLA_PLEGABLE;
     }
 
-    public String toString() {
-        return "Mueble tipo silla. "+ super.toString();
+    private TipoSilla tipoSilla;
+
+    public Silla(TipoSilla tipoSilla) {
+        super(TipoMueble.SILLA);
+        this.tipoSilla = tipoSilla;
     }
+
+    public TipoSilla getTipoSilla() {
+        return tipoSilla;
+    }
+
 }

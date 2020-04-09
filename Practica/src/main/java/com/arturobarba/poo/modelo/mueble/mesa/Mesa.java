@@ -1,8 +1,6 @@
 package com.arturobarba.poo.modelo.mueble.mesa;
 
 import com.arturobarba.poo.modelo.mueble.Mueble;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.Color;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
 
 /**
  * Write a description of class Mesa here.
@@ -12,12 +10,18 @@ import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
  */
 public abstract class Mesa extends Mueble
 {
-    public Mesa(double precio, Color color,
-        TipoMadera tipoMadera) {
-        super(precio, color, tipoMadera);
+    public enum TipoMesa {
+        MESA_DE_CAFE, MESA_DE_DORMITORIO, MESA_DE_COMEDOR;
     }
 
-    public String toString() {
-        return "Mueble tipo mesa. "+super.toString();
+    private TipoMesa tipoMesa;
+
+    public Mesa(TipoMesa tipoMesa) {
+        super(TipoMueble.MESA);
+        this.tipoMesa = tipoMesa;
+    }
+
+    public TipoMesa getTipoMesa() {
+        return tipoMesa;
     }
 }

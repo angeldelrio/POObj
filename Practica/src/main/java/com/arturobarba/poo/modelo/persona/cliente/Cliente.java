@@ -4,6 +4,7 @@ package com.arturobarba.poo.modelo.persona.cliente;
 import com.arturobarba.poo.Fabrica;
 import com.arturobarba.poo.modelo.pedido.Pedido;
 import com.arturobarba.poo.modelo.persona.Persona;
+import com.arturobarba.poo.utils.StringUtils;
 import java.util.List;
 
 /**
@@ -14,17 +15,16 @@ import java.util.List;
  */
 public abstract class Cliente extends Persona
 {
+    public enum TipoCliente {
+        PARTICULAR, EMPRESA;
+    }
+
     private String iban;
-    private String telefono;
-    private String nif;
+    private TipoCliente tipoCliente;
 
-    public Cliente() {}
-
-    public Cliente(String nombre, String iban, String telefono, String nif) {
-       super(nombre);
-       this.iban = iban;
-       this.telefono = telefono;
-       this.nif = nif;
+    public Cliente(TipoCliente tipoCliente) {
+        super(TipoPersona.CLIENTE);
+        this.tipoCliente = tipoCliente;
     }
 
     public String getIban() {
@@ -35,29 +35,18 @@ public abstract class Cliente extends Persona
         this.iban = iban;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getNif() {
-        return nif;
-    }
-
-    public void setNif(String nif) {
-        this.nif = nif;
-    }
-
-    public List<Pedido> obtenerPedidosRealizados() {
-        // TODO: return Fabrica.MueblesArturo()
-        return null;
+    public TipoCliente getTipoCliente() {
+        return tipoCliente;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " Tlf:" + telefono + ".";
+        String salida = super.toString();
+
+        if (!StringUtils.estaEnBlanco(getIban())) {
+            salida += String.format(" IBAN: %s", getIban());
+        }
+
+        return salida;
     }
 }

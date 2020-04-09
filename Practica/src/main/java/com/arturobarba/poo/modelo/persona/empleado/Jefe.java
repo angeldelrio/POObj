@@ -11,9 +11,6 @@ import com.arturobarba.poo.modelo.persona.empleado.artesano.Artesano;
 public class Jefe extends Empleado
 {
     public Jefe() {
-    }
-
-    public String toString() {
-        return super.toString() + ". Puesto: jefe";
+        super(TipoEmpleado.JEFE);
     }
 }

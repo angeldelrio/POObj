@@ -1,5 +1,7 @@
 package com.arturobarba.poo.modelo.persona.cliente;
 
+import com.arturobarba.poo.utils.StringUtils;
+
 /**
  * Write a description of class Empresa here.
  * 
@@ -8,11 +10,31 @@ package com.arturobarba.poo.modelo.persona.cliente;
  */
 public class Empresa extends Cliente
 {
+    public enum TipoEmpresa {
+        MINORISTA, MAYORISTA;
 
-    public Empresa() { }
+        @Override
+        public String toString() {
+            return StringUtils.normalizarEnum(this);
+        }
+    }
+
+    private TipoEmpresa tipoEmpresa;
+
+    public Empresa() {
+        super(TipoCliente.EMPRESA);
+    }
+
+    public TipoEmpresa getTipoEmpresa() {
+        return tipoEmpresa;
+    }
+
+    public void setTipoEmpresa(TipoEmpresa tipoEmpresa) {
+        this.tipoEmpresa = tipoEmpresa;
+    }
 
     @Override
     public String toString() {
-        return "(Empresa) " + super.toString();
+        return super.toString() + String.format(" Tipo de Empresa: %s", tipoEmpresa.toString());
     }
 }

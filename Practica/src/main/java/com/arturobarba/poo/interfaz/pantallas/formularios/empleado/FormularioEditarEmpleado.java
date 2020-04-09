@@ -4,8 +4,8 @@ import com.arturobarba.poo.Fabrica;
 import com.arturobarba.poo.interfaz.Entrada;
 import com.arturobarba.poo.interfaz.Salida;
 import com.arturobarba.poo.interfaz.pantallas.formularios.AbstractFormulario;
-import com.arturobarba.poo.modelo.persona.cliente.Cliente;
 import com.arturobarba.poo.modelo.persona.empleado.Empleado;
+import com.arturobarba.poo.modelo.persona.empleado.artesano.ArtesanoHora;
 import com.arturobarba.poo.utils.StringUtils;
 
 public class FormularioEditarEmpleado extends AbstractFormulario {
@@ -31,22 +31,32 @@ public class FormularioEditarEmpleado extends AbstractFormulario {
         }
 
         Entrada.reset();
+        rellenarCamposComunes();
+
+        if (empleadoEditado instanceof ArtesanoHora) {
+            rellenarCamposArtesanoHora();
+        }
+    }
+
+    private void rellenarCamposComunes() {
         Salida.println("Nombre:");
         String nombre = Entrada.getString();
-        if (!StringUtils.isBlank(nombre)) {
+        if (!StringUtils.estaEnBlanco(nombre)) {
             empleadoEditado.setNombre(nombre);
-        }
-
-        Salida.println("Horas contrato:");
-        String horasContrato = Entrada.getString();
-        if (!StringUtils.isBlank(horasContrato)) {
-            empleadoEditado.setHorasContrato(Integer.parseInt(horasContrato));
         }
 
         Salida.println("Salario:");
         String salario = Entrada.getString();
-        if (!StringUtils.isBlank(salario)) {
+        if (!StringUtils.estaEnBlanco(salario)) {
             empleadoEditado.setSalario(Integer.parseInt(salario));
+        }
+    }
+
+    private void rellenarCamposArtesanoHora() {
+        Salida.println("Horas de trabajo:");
+        String horasTrabajo = Entrada.getString();
+        if (!StringUtils.estaEnBlanco(horasTrabajo)) {
+            ((ArtesanoHora) empleadoEditado).setHorasDeTrabajo(Integer.parseInt(horasTrabajo));
         }
     }
 

@@ -8,15 +8,7 @@ package com.arturobarba.poo.modelo.persona.cliente;
  */
 public class Particular extends Cliente
 {
-
-    public Particular() {}
-
-    public Particular(String nombre, String iban, String telefono, String nif) {
-       super(nombre, iban, telefono, nif);
-    }
-
-    @Override
-    public String toString() {
-        return "(Particular) " + super.toString();
+    public Particular() {
+        super(TipoCliente.PARTICULAR);
     }
 }

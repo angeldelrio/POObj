@@ -1,8 +1,7 @@
 package com.arturobarba.poo.modelo.mueble;
 
+import static com.arturobarba.poo.utils.StringUtils.estaEnBlanco;
 import com.arturobarba.poo.modelo.Identificable;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.Color;
-import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
 
 /**
  * Abstract class Muebles - write a description of the class here
@@ -12,42 +11,52 @@ import com.arturobarba.poo.modelo.mueble.caracteristicas.TipoMadera;
  */
 public abstract class Mueble extends Identificable
 {
-    private Color color;
-    private TipoMadera tipoMadera;
-    private double precio;
-
-    public Mueble(double precio, Color color, TipoMadera tipoMadera) {
-        setPrecio(precio);
-        setColor(color);
-        setTipoMadera(tipoMadera);
+    public enum TipoMueble {
+        MESA, SILLA;
     }
-    
-    public double getPrecio() {
+
+    private TipoMueble tipoMueble;
+    private Float precio;
+    private String modelo;
+
+    public Mueble(TipoMueble tipoMueble) {
+        this.tipoMueble = tipoMueble;
+    }
+
+    public Float getPrecio() {
         return this.precio;
     }
     
-    public void setPrecio(double precio) {
-        if (precio > 0)
-            this.precio = precio;
+    public void setPrecio(Float precio) {
+        this.precio = precio;
     }
 
-    public Color getColor() {
-        return color;
+    public TipoMueble getTipoMueble() {
+        return tipoMueble;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
+    public String getModelo() {
+        return modelo;
     }
 
-    public TipoMadera getTipoMadera() {
-        return tipoMadera;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
-    public void setTipoMadera(TipoMadera tipoMadera) {
-        this.tipoMadera = tipoMadera;
-    }
-
+    @Override
     public String toString() {
-        return this.getClass().getSimpleName() + "#" + getId() + ". Precio: " + getPrecio() + " euros.";
+        String salida = super.toString();
+
+        salida += String.format(" %s ", getClass().getSimpleName());
+
+        if(!estaEnBlanco(getModelo())) {
+            salida += String.format(" Modelo: %s", getModelo());
+        }
+
+        if (getPrecio() != null) {
+            salida += String.format(" Precio: %.2f €", getPrecio());
+        }
+
+        return salida;
     }
 }
