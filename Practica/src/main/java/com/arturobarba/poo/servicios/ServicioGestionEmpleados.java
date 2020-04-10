@@ -16,6 +16,18 @@ public class ServicioGestionEmpleados {
         return repositorioEmpleado.guardar(empleado);
     }
 
+    public List<Integer> guardar(List<Empleado> empleados) {
+        return repositorioEmpleado.guardar(empleados);
+    }
+
+    public void eliminar(Empleado empleado) {
+        eliminar(empleado.getId());
+    }
+
+    public void eliminar(int id) {
+        repositorioEmpleado.eliminar(id);
+    }
+
     public List<Empleado> listar() {
         return repositorioEmpleado.obtenerTodos();
     }

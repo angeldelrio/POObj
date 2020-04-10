@@ -1,8 +1,10 @@
 package com.arturobarba.poo.interfaz;
 
+import com.arturobarba.poo.utils.StringUtils;
+
 public class Salida {
-    public final static String SEPARADOR_GRANDE = "=====================================================================";
-    public final static String SEPARADOR_FINO = "---------------------------------------------------------------------";
+    public static String SEPARADOR_GRANDE = StringUtils.repetirString("=", 80);
+    public static String SEPARADOR_FINO = StringUtils.repetirString("-", 80);
 
     public static void println(String valor) {
         System.out.println(valor);

@@ -7,4 +7,5 @@ public interface Menu extends Pantalla {
     List<ElementoMenu> obtenerElementosMenu();
     ElementoMenu seleccionarElementoMenu();
     ElementoMenu obtenerElementoMenu(int numOpcion);
+    ElementoMenu getElementoMenuSeleccionado();
 }

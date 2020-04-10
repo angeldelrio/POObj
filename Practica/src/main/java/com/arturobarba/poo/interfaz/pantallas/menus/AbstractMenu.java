@@ -9,6 +9,7 @@ public abstract class AbstractMenu implements Menu {
 
     private boolean debeSalir;
     private String tituloPrompt;
+    private ElementoMenu elementoMenuSeleccionado;
 
     public AbstractMenu() {
         this(null);
@@ -32,17 +33,19 @@ public abstract class AbstractMenu implements Menu {
         }
 
         Salida.println(tituloPrompt);
-        ElementoMenu elementoSeleccionado = seleccionarElementoMenu();
+        elementoMenuSeleccionado = seleccionarElementoMenu();
 
         if (debeSalir) {
             return;
         }
 
-        if (elementoSeleccionado == null) {
+        if (elementoMenuSeleccionado == null) {
             return;
         }
 
-        elementoSeleccionado.getAccionMenu().realizarAccion(elementoSeleccionado);
+        if (elementoMenuSeleccionado.getAccionMenu() != null) {
+            elementoMenuSeleccionado.getAccionMenu().realizarAccion(elementoMenuSeleccionado);
+        }
     }
 
     @Override
@@ -76,6 +79,9 @@ public abstract class AbstractMenu implements Menu {
     @Override
     public void salir() {
         debeSalir = true;
-//        Entrada.reset();
+    }
+
+    public ElementoMenu getElementoMenuSeleccionado() {
+        return elementoMenuSeleccionado;
     }
 }

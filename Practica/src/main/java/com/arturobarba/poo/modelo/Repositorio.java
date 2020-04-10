@@ -36,6 +36,15 @@ public abstract class Repositorio<T extends Identificable> {
         return entidad.getId();
     }
 
+    public List<Integer> guardar(List<T> entidades) {
+        List<Integer> ids = new ArrayList<>();
+        for (T entidad : entidades) {
+            ids.add(guardar(entidad));
+        }
+
+        return ids;
+    }
+
     public T obtener(int id) {
         return entidades.get(id);
     }

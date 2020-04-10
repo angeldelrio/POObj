@@ -16,6 +16,10 @@ public class ServicioGestionClientes {
         return repositorioCliente.guardar(cliente);
     }
 
+    public List<Integer> guardar(List<Cliente> clientes) {
+        return repositorioCliente.guardar(clientes);
+    }
+
     public List<Cliente> listar() {
         return repositorioCliente.obtenerTodos();
     }

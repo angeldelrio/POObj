@@ -6,8 +6,8 @@ import com.arturobarba.poo.interfaz.pantallas.menus.ElementoMenu;
 import com.arturobarba.poo.interfaz.pantallas.menus.SalirElementoMenu;
 import com.arturobarba.poo.interfaz.pantallas.menus.SeparadorElementoMenu;
 import com.arturobarba.poo.interfaz.pantallas.menus.TituloElementoMenu;
-import com.arturobarba.poo.interfaz.pantallas.menus.gestion.cliente.MenuGestionCliente;
-import com.arturobarba.poo.interfaz.pantallas.menus.gestion.empleado.MenuGestionEmpleado;
+import com.arturobarba.poo.interfaz.pantallas.cliente.menus.MenuGestionCliente;
+import com.arturobarba.poo.interfaz.pantallas.empleado.menus.MenuGestionEmpleado;
 import java.util.Arrays;
 import java.util.List;
 

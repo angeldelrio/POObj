@@ -20,8 +20,8 @@ public class Interfaz {
 
     public static void navegarAPantalla(Pantalla pantalla) {
         Pantalla actual = navegacionPantallas.peek();
-        navegacionPantallas.push(pantalla);
         actual.salir();
+        navegacionPantallas.push(pantalla);
     }
 
     public static void salirPantallaActual() {

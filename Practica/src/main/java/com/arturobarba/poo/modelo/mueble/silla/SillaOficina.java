@@ -23,6 +23,6 @@ public abstract class SillaOficina extends Silla
 
     @Override
     public String toString() {
-        return super.toString() + String.format(" Tiene ruedas: %s", StringUtils.normalizeBoolean(tieneRuedas()));
+        return super.toString() + String.format(" Tiene ruedas: %s", StringUtils.normalizarBoolean(tieneRuedas()));
     }
 }
