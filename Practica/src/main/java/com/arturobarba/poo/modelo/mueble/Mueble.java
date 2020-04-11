@@ -15,12 +15,19 @@ public abstract class Mueble extends Identificable
         MESA, SILLA;
     }
 
+    public enum Material {
+        CRISTAL, MADERA;
+    }
+
     private TipoMueble tipoMueble;
     private Float precio;
     private String modelo;
+    private Material material;
 
-    public Mueble(TipoMueble tipoMueble) {
+    public Mueble(TipoMueble tipoMueble, Material material)
+    {
         this.tipoMueble = tipoMueble;
+        this.material = material;
     }
 
     public Float getPrecio() {
@@ -41,6 +48,10 @@ public abstract class Mueble extends Identificable
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public Material getMaterial() {
+        return material;
     }
 
     @Override

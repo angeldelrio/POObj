@@ -244,10 +244,12 @@ public abstract class AbstractTabla<T extends Identificable> implements Tabla<T>
         return valorLimpio + repetirString(" ", anchoColumna - valorLimpio.length());
     }
 
+    @Override
     public List<T> getModelos() {
         return modelos;
     }
 
+    @Override
     public void setModelos(List<T> modelos) {
         this.modelos = modelos;
     }

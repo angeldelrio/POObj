@@ -1,6 +1,6 @@
 package com.arturobarba.poo.interfaz;
 
-import com.arturobarba.poo.interfaz.pantallas.menus.principal.MenuPrincipal;
+import com.arturobarba.poo.interfaz.pantallas.PantallaMenuPrincipal;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
@@ -9,7 +9,7 @@ public class Interfaz {
 
     public static void iniciar() {
         navegacionPantallas = new ArrayDeque<>();
-        navegacionPantallas.push(new MenuPrincipal());
+        navegacionPantallas.push(new PantallaMenuPrincipal());
 
         while(!navegacionPantallas.isEmpty()) {
             navegacionPantallas.getFirst().mostrar();

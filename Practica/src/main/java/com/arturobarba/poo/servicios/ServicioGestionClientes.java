@@ -3,6 +3,7 @@ package com.arturobarba.poo.servicios;
 import com.arturobarba.poo.modelo.FactoriaRepositorios;
 import com.arturobarba.poo.modelo.Repositorio;
 import com.arturobarba.poo.modelo.persona.cliente.Cliente;
+import com.arturobarba.poo.modelo.persona.empleado.Empleado;
 import java.util.List;
 
 public class ServicioGestionClientes {
@@ -22,5 +23,13 @@ public class ServicioGestionClientes {
 
     public List<Cliente> listar() {
         return repositorioCliente.obtenerTodos();
+    }
+
+    public void eliminar(Cliente cliente) {
+        eliminar(cliente.getId());
+    }
+
+    public void eliminar(int id) {
+        repositorioCliente.eliminar(id);
     }
 }

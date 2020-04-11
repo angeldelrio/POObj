@@ -16,8 +16,8 @@ public abstract class Mesa extends Mueble
 
     private TipoMesa tipoMesa;
 
-    public Mesa(TipoMesa tipoMesa) {
-        super(TipoMueble.MESA);
+    public Mesa(TipoMesa tipoMesa, Material material) {
+        super(TipoMueble.MESA, material);
         this.tipoMesa = tipoMesa;
     }
 

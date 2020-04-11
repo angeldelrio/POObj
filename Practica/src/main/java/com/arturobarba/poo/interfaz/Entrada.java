@@ -14,21 +14,32 @@ public class Entrada
         lector = new Scanner(System.in);
     }
 
-    public static int getInt() {
-        int valor = lector.nextInt();
-        lector.nextLine();
-        return valor;
+    public static Integer getInt() {
+        String valor = getString();
+        Integer valorEntero;
+        try {
+            valorEntero = Integer.valueOf(valor);
+        } catch (Exception e) {
+            valorEntero = null;
+        }
+
+        return valorEntero;
     }
-    
+
+    public static Float getFloat() {
+        String valor = getString();
+        Float valorFloat;
+        try {
+            valor = valor.replace(",", ".");
+            valorFloat = Float.parseFloat(valor);
+        } catch (Exception e) {
+            valorFloat = null;
+        }
+
+        return valorFloat;
+    }
+
     public static String getString() {
         return lector.nextLine();
-    }
-
-    public static void next() {
-        lector.next();
-    }
-
-    public static void reset() {
-        lector = lector.reset();
     }
 }

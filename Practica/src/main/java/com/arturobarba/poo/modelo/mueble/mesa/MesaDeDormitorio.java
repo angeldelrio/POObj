@@ -9,7 +9,7 @@ package com.arturobarba.poo.modelo.mueble.mesa;
 public class MesaDeDormitorio extends Mesa
 {
     public MesaDeDormitorio() {
-        super(TipoMesa.MESA_DE_DORMITORIO);
+        super(TipoMesa.MESA_DE_DORMITORIO, Material.MADERA);
     }
 
 }

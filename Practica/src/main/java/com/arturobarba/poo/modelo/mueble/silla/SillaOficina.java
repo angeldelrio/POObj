@@ -13,7 +13,7 @@ public abstract class SillaOficina extends Silla
     private boolean tieneRuedas;
 
     public SillaOficina(boolean tieneRuedas) {
-        super(TipoSilla.SILLA_DE_OFICINA);
+        super(TipoSilla.SILLA_DE_OFICINA, false, tieneRuedas);
         this.tieneRuedas = tieneRuedas;
     }
 

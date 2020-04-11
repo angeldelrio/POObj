@@ -9,6 +9,6 @@ package com.arturobarba.poo.modelo.mueble.silla;
 public class SillaCocina extends Silla
 {
     public SillaCocina() {
-        super(TipoSilla.SILLA_DE_COCINA);
+        super(TipoSilla.SILLA_DE_COCINA, false, false);
     }
 }

@@ -16,4 +16,9 @@ public interface Tabla<T extends Identificable> {
     T seleccionarModelo();
 
     AccionTabla<T> mostrarTabla();
+
+    List<T> getModelos();
+
+    void setModelos(List<T> modelos);
+
 }

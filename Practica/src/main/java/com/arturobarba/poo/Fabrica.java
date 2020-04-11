@@ -39,6 +39,10 @@ public class Fabrica
         return servicioEmpleados;
     }
 
+    public ServicioGestionMuebles muebles() {
+        return servicioMuebles;
+    }
+
     public static Fabrica MueblesArturo() {
         if (instancia == null) {
             instancia = new Fabrica();

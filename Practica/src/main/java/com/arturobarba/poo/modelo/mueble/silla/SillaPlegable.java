@@ -9,7 +9,7 @@ package com.arturobarba.poo.modelo.mueble.silla;
 public class SillaPlegable extends Silla
 {
     public SillaPlegable() {
-        super(TipoSilla.SILLA_PLEGABLE);
+        super(TipoSilla.SILLA_PLEGABLE, true, false);
     }
 
 }

@@ -9,6 +9,6 @@ package com.arturobarba.poo.modelo.mueble.mesa;
 public class MesaDeComedor extends Mesa
 {
     public MesaDeComedor() {
-        super(TipoMesa.MESA_DE_COMEDOR);
+        super(TipoMesa.MESA_DE_COMEDOR, Material.MADERA);
     }
 }

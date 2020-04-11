@@ -24,7 +24,7 @@ public abstract class AbstractMenu implements Menu {
     }
 
     @Override
-    public void mostrar() {
+    public void mostrarMenu() {
         this.debeSalir = false;
         List<ElementoMenu> elementos = obtenerElementosMenu();
 
@@ -50,23 +50,22 @@ public abstract class AbstractMenu implements Menu {
 
     @Override
     public ElementoMenu seleccionarElementoMenu() {
-        int numOpcion = -1;
+        Integer numOpcion;
         try {
             numOpcion = Entrada.getInt();
         } catch (Exception e) {
-            numOpcion = -1;
+            numOpcion = null;
         }
 
-        if (numOpcion < 0) {
+        if (numOpcion == null || numOpcion < 0) {
             Salida.println("Opción inválida." + System.lineSeparator());
-            Entrada.next();
             return seleccionarElementoMenu();
         }
-        return obtenerElementoMenu(numOpcion);
+        return buscarElementoMenu(numOpcion);
     }
 
     @Override
-    public ElementoMenu obtenerElementoMenu(int numOpcion) {
+    public ElementoMenu buscarElementoMenu(int numOpcion) {
         for (ElementoMenu elementoMenu : obtenerElementosMenu()) {
             if (elementoMenu.getNumOpcion() == numOpcion) {
                 return elementoMenu;
@@ -77,7 +76,7 @@ public abstract class AbstractMenu implements Menu {
     }
 
     @Override
-    public void salir() {
+    public void salirMenu() {
         debeSalir = true;
     }
 

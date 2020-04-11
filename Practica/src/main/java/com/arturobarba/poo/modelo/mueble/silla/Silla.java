@@ -14,15 +14,26 @@ public abstract class Silla extends Mueble
         SILLA_DE_COCINA, SILLA_DE_OFICINA, SILLA_PLEGABLE;
     }
 
-    private TipoSilla tipoSilla;
+    private final TipoSilla tipoSilla;
+    private final boolean esPlegable;
+    private final boolean tieneRuedas;
 
-    public Silla(TipoSilla tipoSilla) {
-        super(TipoMueble.SILLA);
+    public Silla(TipoSilla tipoSilla, boolean esPlegable, boolean tieneRuedas) {
+        super(TipoMueble.SILLA, Material.MADERA);
         this.tipoSilla = tipoSilla;
+        this.esPlegable = esPlegable;
+        this.tieneRuedas = tieneRuedas;
     }
 
     public TipoSilla getTipoSilla() {
         return tipoSilla;
     }
 
+    public boolean esPlegable() {
+        return esPlegable;
+    }
+
+    public boolean tieneRuedas() {
+        return tieneRuedas;
+    }
 }
