@@ -1,17 +1,15 @@
 package com.arturobarba.poo.interfaz.pantallas.app.comercial;
 
-import static com.arturobarba.poo.interfaz.Salida.*;
+import static com.arturobarba.poo.interfaz.Salida.println;
+import static com.arturobarba.poo.interfaz.Salida.titulo;
 import static com.arturobarba.poo.utils.StringUtils.estaEnBlanco;
 import com.arturobarba.poo.Fabrica;
 import com.arturobarba.poo.interfaz.Entrada;
 import com.arturobarba.poo.interfaz.Interfaz;
 import com.arturobarba.poo.interfaz.Pantalla;
-import com.arturobarba.poo.interfaz.Salida;
-import com.arturobarba.poo.interfaz.pantallas.PantallaTabla;
 import com.arturobarba.poo.interfaz.pantallas.app.comercial.tablas.TablaGestionNuevosPedidos;
 import com.arturobarba.poo.interfaz.pantallas.tablas.AccionTabla;
 import com.arturobarba.poo.interfaz.pantallas.tablas.SalirAccionTabla;
-import com.arturobarba.poo.interfaz.pantallas.tablas.Tabla;
 import com.arturobarba.poo.modelo.pedido.Pedido;
 import com.arturobarba.poo.modelo.pedido.Pedido.EstadoPedido;
 import com.arturobarba.poo.modelo.persona.empleado.Comercial;

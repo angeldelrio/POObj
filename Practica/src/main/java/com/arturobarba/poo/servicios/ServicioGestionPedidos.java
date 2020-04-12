@@ -5,7 +5,6 @@ import com.arturobarba.poo.modelo.FactoriaRepositorios;
 import com.arturobarba.poo.modelo.Repositorio;
 import com.arturobarba.poo.modelo.pedido.Pedido;
 import com.arturobarba.poo.modelo.pedido.Pedido.EstadoPedido;
-import com.arturobarba.poo.modelo.persona.cliente.Cliente;
 import com.arturobarba.poo.modelo.persona.empleado.Comercial;
 import java.util.List;
 

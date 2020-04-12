@@ -5,7 +5,6 @@ import com.arturobarba.poo.modelo.mueble.Mueble;
 import com.arturobarba.poo.modelo.persona.cliente.Cliente;
 import com.arturobarba.poo.modelo.persona.empleado.Comercial;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**

@@ -1,7 +1,5 @@
 package com.arturobarba.poo.modelo.persona.empleado;
 
-import com.arturobarba.poo.modelo.persona.empleado.artesano.Artesano;
-
 /**
  * Write a description of class Jefe here.
  * 

@@ -1,11 +1,8 @@
 package com.arturobarba.poo.modelo.persona.cliente;
 
 
-import com.arturobarba.poo.Fabrica;
-import com.arturobarba.poo.modelo.pedido.Pedido;
 import com.arturobarba.poo.modelo.persona.Persona;
 import com.arturobarba.poo.utils.StringUtils;
-import java.util.List;
 
 /**
  * Abstract class Cliente - write a description of the class here

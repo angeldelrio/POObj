@@ -1,9 +1,11 @@
 package com.arturobarba.poo.interfaz.pantallas.tablas;
 
-import static com.arturobarba.poo.interfaz.Salida.*;
-import static com.arturobarba.poo.utils.StringUtils.*;
+import static com.arturobarba.poo.interfaz.Salida.print;
+import static com.arturobarba.poo.interfaz.Salida.println;
+import static com.arturobarba.poo.utils.StringUtils.estaEnBlanco;
+import static com.arturobarba.poo.utils.StringUtils.normalizarString;
+import static com.arturobarba.poo.utils.StringUtils.repetirString;
 import com.arturobarba.poo.interfaz.Entrada;
-import com.arturobarba.poo.interfaz.Interfaz;
 import com.arturobarba.poo.modelo.Identificable;
 import java.util.ArrayList;
 import java.util.List;

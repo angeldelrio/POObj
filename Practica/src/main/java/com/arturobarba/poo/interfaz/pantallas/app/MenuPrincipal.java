@@ -1,8 +1,8 @@
 package com.arturobarba.poo.interfaz.pantallas.app;
 
+import com.arturobarba.poo.interfaz.pantallas.app.cliente.PantallaNuevoPedido;
 import com.arturobarba.poo.interfaz.pantallas.app.comercial.PantallaComercialGestionarNuevosPedidos;
 import com.arturobarba.poo.interfaz.pantallas.app.gestion.cliente.PantallaMenuGestionCliente;
-import com.arturobarba.poo.interfaz.pantallas.app.cliente.PantallaNuevoPedido;
 import com.arturobarba.poo.interfaz.pantallas.app.gestion.empleado.PantallaMenuGestionEmpleado;
 import com.arturobarba.poo.interfaz.pantallas.app.gestion.mueble.PantallaMenuGestionMueble;
 import com.arturobarba.poo.interfaz.pantallas.app.gestion.pedido.PantallaListadoPedidos;

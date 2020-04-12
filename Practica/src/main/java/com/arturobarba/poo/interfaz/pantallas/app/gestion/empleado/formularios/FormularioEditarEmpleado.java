@@ -1,6 +1,7 @@
 package com.arturobarba.poo.interfaz.pantallas.app.gestion.empleado.formularios;
 
-import static com.arturobarba.poo.utils.StringUtils.*;
+import static com.arturobarba.poo.utils.StringUtils.normalizarInteger;
+import static com.arturobarba.poo.utils.StringUtils.normalizarString;
 import com.arturobarba.poo.Fabrica;
 import com.arturobarba.poo.interfaz.Entrada;
 import com.arturobarba.poo.interfaz.Salida;

@@ -6,15 +6,16 @@ import com.arturobarba.poo.modelo.pedido.Pedido;
 import com.arturobarba.poo.modelo.pedido.RepositorioPedido;
 import com.arturobarba.poo.modelo.persona.cliente.Cliente;
 import com.arturobarba.poo.modelo.persona.cliente.RepositorioCliente;
+import com.arturobarba.poo.modelo.persona.empleado.Empleado;
 import com.arturobarba.poo.modelo.persona.empleado.RepositorioEmpleado;
 
 public class FactoriaRepositorios {
-    private static Repositorio<com.arturobarba.poo.modelo.persona.empleado.Empleado> repositorioEmpleado;
+    private static Repositorio<Empleado> repositorioEmpleado;
     private static Repositorio<Cliente> repositorioClientes;
     private static Repositorio<Mueble> repositorioMuebles;
     private static Repositorio<Pedido> repositorioPedidos;
 
-    public static Repositorio<com.arturobarba.poo.modelo.persona.empleado.Empleado> repositorioEmpleados() {
+    public static Repositorio<Empleado> repositorioEmpleados() {
         if (repositorioEmpleado == null) {
             repositorioEmpleado = new RepositorioEmpleado();
         }

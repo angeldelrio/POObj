@@ -1,6 +1,5 @@
 package com.arturobarba.poo.interfaz.pantallas;
 
-import com.arturobarba.poo.Fabrica;
 import com.arturobarba.poo.interfaz.Interfaz;
 import com.arturobarba.poo.interfaz.Pantalla;
 import com.arturobarba.poo.interfaz.pantallas.tablas.Tabla;

@@ -3,7 +3,6 @@ package com.arturobarba.poo.modelo.persona.empleado.artesano;
 
 import com.arturobarba.poo.modelo.pedido.Pedido;
 import com.arturobarba.poo.modelo.persona.empleado.Empleado;
-import java.util.*;
 
 /**
  * Abstract class Artesano - write a description of the class here

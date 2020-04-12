@@ -78,6 +78,9 @@ public abstract class AbstractMenu implements Menu {
     }
 
     @Override
+    public abstract List<ElementoMenu> obtenerElementosMenu();
+
+    @Override
     public void salirMenu() {
         debeSalir = true;
     }

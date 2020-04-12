@@ -1,7 +1,7 @@
 package com.arturobarba.poo.interfaz;
 
 import com.arturobarba.poo.utils.StringUtils;
-import java.util.*;
+import java.util.Scanner;
 /**
  * Write a description of class Entrada here.
  * 

@@ -1,6 +1,9 @@
 package com.arturobarba.poo.interfaz.pantallas.app.cliente;
 
-import static com.arturobarba.poo.interfaz.Salida.*;
+import static com.arturobarba.poo.interfaz.Salida.println;
+import static com.arturobarba.poo.interfaz.Salida.separadorGrande;
+import static com.arturobarba.poo.interfaz.Salida.titulo;
+import static com.arturobarba.poo.utils.StringUtils.estaEnBlanco;
 import com.arturobarba.poo.Fabrica;
 import com.arturobarba.poo.interfaz.Entrada;
 import com.arturobarba.poo.interfaz.Interfaz;
@@ -15,7 +18,6 @@ import com.arturobarba.poo.modelo.persona.cliente.Cliente;
 import com.arturobarba.poo.modelo.persona.cliente.ClienteEmpresa;
 import com.arturobarba.poo.modelo.persona.cliente.ClienteParticular;
 import java.util.List;
-import static com.arturobarba.poo.utils.StringUtils.*;
 
 public class PantallaNuevoPedido implements Pantalla {
 

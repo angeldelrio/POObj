@@ -4,7 +4,6 @@ import com.arturobarba.poo.modelo.CriterioBusqueda;
 import com.arturobarba.poo.modelo.FactoriaRepositorios;
 import com.arturobarba.poo.modelo.Repositorio;
 import com.arturobarba.poo.modelo.persona.cliente.Cliente;
-import com.arturobarba.poo.modelo.persona.empleado.Empleado;
 import com.arturobarba.poo.utils.StringUtils;
 import java.util.List;
 
