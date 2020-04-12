@@ -20,7 +20,7 @@ public class Pedido extends Identificable
 
     public enum EstadoPedido
     {
-        CREADO, PRESUPUESTO_ACEPTADO, PRESUPUESTO_RECHAZADO, PDTE_FABRICACION, EN_FABRICACION, PDTE_RECOGIDA, FINALIZADO, INCIDENCIA;
+        CREADO, PDTE_ACEPTAR_PRESUPUESTO, PRESUPUESTO_ACEPTADO, PRESUPUESTO_RECHAZADO, PDTE_FABRICACION, EN_FABRICACION, PDTE_RECOGIDA, FINALIZADO, INCIDENCIA;
     }
     // instance variables - replace the example below with your own
     private Cliente cliente;

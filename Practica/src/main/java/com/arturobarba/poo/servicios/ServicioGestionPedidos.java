@@ -6,6 +6,7 @@ import com.arturobarba.poo.modelo.Repositorio;
 import com.arturobarba.poo.modelo.pedido.Pedido;
 import com.arturobarba.poo.modelo.pedido.Pedido.EstadoPedido;
 import com.arturobarba.poo.modelo.persona.cliente.Cliente;
+import com.arturobarba.poo.modelo.persona.empleado.Comercial;
 import java.util.List;
 
 public class ServicioGestionPedidos {
@@ -42,6 +43,11 @@ public class ServicioGestionPedidos {
                 return estadoPedido == entidad.getEstado();
             }
         });
+    }
+
+    public void presupuestarPedido(Pedido pedido, Comercial comercial) {
+        comercial.presupuestaPedido(pedido);
+        guardar(pedido);
     }
 
 }

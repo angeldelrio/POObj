@@ -1,7 +1,10 @@
 package com.arturobarba.poo.servicios;
 
+import static com.arturobarba.poo.utils.StringUtils.estaEnBlanco;
+import com.arturobarba.poo.modelo.CriterioBusqueda;
 import com.arturobarba.poo.modelo.FactoriaRepositorios;
 import com.arturobarba.poo.modelo.Repositorio;
+import com.arturobarba.poo.modelo.persona.empleado.Comercial;
 import com.arturobarba.poo.modelo.persona.empleado.Empleado;
 import com.arturobarba.poo.modelo.persona.empleado.criteriosbusqueda.CriterioBusquedaPorTipo;
 import java.util.List;
@@ -35,6 +38,19 @@ public class ServicioGestionEmpleados {
 
     public List<Empleado> buscarPorTipo(Class<? extends Empleado> tipo) {
         return repositorioEmpleado.buscar(new CriterioBusquedaPorTipo(tipo));
+    }
+
+    public Comercial buscarComercialPorNif(final String nif) {
+        if (estaEnBlanco(nif)) {
+            return null;
+        }
+
+        return repositorioEmpleado.buscarUno(new CriterioBusqueda<Empleado>() {
+            @Override
+            public boolean cumpleCriterio(Empleado entidad) {
+                return entidad instanceof Comercial && nif.equalsIgnoreCase(entidad.getNif());
+            }
+        });
     }
 
 }

@@ -200,6 +200,13 @@ public class DataSetPruebas {
                 );
             }
 
+            Comercial comercial = new Comercial();
+            comercial.setNombre("José Martínez");
+            comercial.setSalario(15000);
+            comercial.setNif("11111111H");
+
+            empleados.add(comercial);
+
             Fabrica.MueblesArturo().empleados().guardar(empleados);
         }
     }
