@@ -10,6 +10,7 @@ public abstract class AbstractMenu implements Menu {
     private boolean debeSalir;
     private String tituloPrompt;
     private ElementoMenu elementoMenuSeleccionado;
+    private boolean debeIgnorarAcciones;
 
     public AbstractMenu() {
         this(null);
@@ -21,6 +22,8 @@ public abstract class AbstractMenu implements Menu {
         } else {
             this.tituloPrompt = tituloPrompt;
         }
+
+        debeIgnorarAcciones = false;
     }
 
     @Override
@@ -43,13 +46,12 @@ public abstract class AbstractMenu implements Menu {
             return;
         }
 
-        if (elementoMenuSeleccionado.getAccionMenu() != null) {
+        if (elementoMenuSeleccionado.getAccionMenu() != null && !debeIgnorarAcciones) {
             elementoMenuSeleccionado.getAccionMenu().realizarAccion(elementoMenuSeleccionado);
         }
     }
 
-    @Override
-    public ElementoMenu seleccionarElementoMenu() {
+    private ElementoMenu seleccionarElementoMenu() {
         Integer numOpcion;
         try {
             numOpcion = Entrada.getInt();
@@ -82,5 +84,15 @@ public abstract class AbstractMenu implements Menu {
 
     public ElementoMenu getElementoMenuSeleccionado() {
         return elementoMenuSeleccionado;
+    }
+
+    @Override
+    public void debeIgnorarAcciones(boolean debeIgnorarAcciones) {
+        this.debeIgnorarAcciones = debeIgnorarAcciones;
+    }
+
+    @Override
+    public boolean debeIgnorarAcciones() {
+        return debeIgnorarAcciones;
     }
 }

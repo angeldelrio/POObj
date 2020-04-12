@@ -54,6 +54,20 @@ public abstract class Repositorio<T extends Identificable> {
         entidades.remove(id);
     }
 
+    public <S extends T> S buscarUno(CriterioBusqueda<T> criterio) {
+        if (criterio == null) {
+            throw new IllegalArgumentException("Es necesario un criterio de búsqueda");
+        }
+
+        for (T entidad : entidades.values()) {
+            if (criterio.cumpleCriterio(entidad)) {
+                return (S)entidad;
+            }
+        }
+
+        return null;
+    }
+
     public <S extends T> List<S> buscar(CriterioBusqueda<T> criterio) {
         if (criterio == null) {
             throw new IllegalArgumentException("Es necesario un criterio de búsqueda");

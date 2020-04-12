@@ -19,13 +19,14 @@ public abstract class AbstractTabla<T extends Identificable> implements Tabla<T>
     private final List<Columna> cabecera;
     private List<T> modelos;
     private final int anchoTotal;
-
-    private boolean debeSalir = false;
+    private T modeloSeleccionado;
+    private boolean soloMostrarDatos;
 
     public AbstractTabla() {
         cabecera = obtenerColumnas();
         anchoTotal = calcularAnchoTotal();
         modelos = new ArrayList<>();
+        soloMostrarDatos = false;
     }
 
     public AbstractTabla(List<T> modelos) {
@@ -35,7 +36,6 @@ public abstract class AbstractTabla<T extends Identificable> implements Tabla<T>
 
     @Override
     public AccionTabla<T> mostrarTabla() {
-        debeSalir = false;
         List<Fila<T>> filas = obtenerFilas(modelos);
 
         mostrarCabecera();
@@ -52,26 +52,32 @@ public abstract class AbstractTabla<T extends Identificable> implements Tabla<T>
 
         if (modelos == null || modelos.isEmpty()) {
             println("No hay resultados que mostrar");
-            Interfaz.salirPantallaActual();
             return null;
         }
 
-        T modeloSeleccionado = seleccionarModelo();
-        if (modeloSeleccionado == null) {
-            Interfaz.salirPantallaActual();
+        if (soloMostrarDatos) {
             return null;
         }
-        println("Acciones disponibles");
+
+        modeloSeleccionado = seleccionarModelo();
+        if (modeloSeleccionado == null) {
+            return null;
+        }
 
         List<AccionTabla<T>> acciones = obtenerAcciones();
-        for (AccionTabla<T> accion : acciones) {
-            println(accion.toString());
+        if (acciones != null && !acciones.isEmpty()) {
+            println("Acciones disponibles");
+            for (AccionTabla<T> accion : acciones) {
+                println(accion.toString());
+            }
+
+            AccionTabla<T> accionSelecionada = seleccionarAccion(modeloSeleccionado);
+            accionSelecionada.realizarAccion(modeloSeleccionado);
+
+            return accionSelecionada;
         }
 
-        AccionTabla<T> accionSelecionada = seleccionarAccion(modeloSeleccionado);
-        accionSelecionada.realizarAccion(modeloSeleccionado);
-
-        return accionSelecionada;
+        return null;
     }
 
     @Override
@@ -88,14 +94,14 @@ public abstract class AbstractTabla<T extends Identificable> implements Tabla<T>
             return null;
         }
 
-        T modeloSeleccionado = buscarModeloPorId(id);
-        if (modeloSeleccionado == null) {
+        T modelo = buscarModeloPorId(id);
+        if (modelo == null) {
             println("ID no válido o no encontrado");
 //            Entrada.next();
             return seleccionarModelo();
         }
 
-        return modeloSeleccionado;
+        return modelo;
     }
 
     private T buscarModeloPorId(Integer id) {
@@ -139,7 +145,6 @@ public abstract class AbstractTabla<T extends Identificable> implements Tabla<T>
         AccionTabla<T> accionSeleccionada = buscarAccionPorCaracter(caracterAccion);
         if (accionSeleccionada == null) {
             println("Acción no válida");
-//            Entrada.next();
             return seleccionarAccion(modeloSeleccionado);
         }
 
@@ -252,5 +257,19 @@ public abstract class AbstractTabla<T extends Identificable> implements Tabla<T>
     @Override
     public void setModelos(List<T> modelos) {
         this.modelos = modelos;
+    }
+
+    public T getModeloSeleccionado() {
+        return modeloSeleccionado;
+    }
+
+    @Override
+    public boolean soloMostrarDatos() {
+        return soloMostrarDatos;
+    }
+
+    @Override
+    public void setSoloMostrarDatos(boolean soloMostrarDatos) {
+        this.soloMostrarDatos = soloMostrarDatos;
     }
 }

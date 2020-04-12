@@ -1,8 +1,10 @@
 package com.arturobarba.poo.servicios;
 
+import com.arturobarba.poo.modelo.CriterioBusqueda;
 import com.arturobarba.poo.modelo.FactoriaRepositorios;
 import com.arturobarba.poo.modelo.Repositorio;
 import com.arturobarba.poo.modelo.pedido.Pedido;
+import com.arturobarba.poo.modelo.pedido.Pedido.EstadoPedido;
 import com.arturobarba.poo.modelo.persona.cliente.Cliente;
 import java.util.List;
 
@@ -33,14 +35,13 @@ public class ServicioGestionPedidos {
         repositorioPedido.eliminar(id);
     }
 
-    public List<Pedido> buscarPedidosPendientesDeCliente(Cliente cliente) {
-//        return repositorioPedido.buscar(new CriterioBusqueda<Pedido>() {
-//            @Override
-//            public boolean cumpleCriterio(Pedido pedido) {
-//                return pedido.;
-//            }
-//        })
-
-        return null;
+    public List<Pedido> buscarPedidosPorEstado(final EstadoPedido estadoPedido) {
+        return repositorioPedido.buscar(new CriterioBusqueda<Pedido>() {
+            @Override
+            public boolean cumpleCriterio(Pedido entidad) {
+                return estadoPedido == entidad.getEstado();
+            }
+        });
     }
+
 }

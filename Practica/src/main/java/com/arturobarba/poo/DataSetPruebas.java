@@ -236,6 +236,13 @@ public class DataSetPruebas {
                 );
             }
 
+            ClienteParticular particular = new ClienteParticular();
+            particular.setNombre("Juán García");
+            particular.setNif("32323232K");
+            particular.setIban("ES45 1234 1234 1234 1234");
+
+            clientes.add(particular);
+
             Fabrica.MueblesArturo().clientes().guardar(clientes);
         }
     }

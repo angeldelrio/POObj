@@ -5,9 +5,10 @@ import java.util.List;
 
 public interface Menu {
     List<ElementoMenu> obtenerElementosMenu();
-    ElementoMenu seleccionarElementoMenu();
     ElementoMenu buscarElementoMenu(int numOpcion);
     ElementoMenu getElementoMenuSeleccionado();
+    void debeIgnorarAcciones(boolean debeIgnorarAcciones);
+    boolean debeIgnorarAcciones();
     void mostrarMenu();
     void salirMenu();
 }

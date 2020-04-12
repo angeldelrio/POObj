@@ -10,6 +10,6 @@ public class SeparadorElementoMenu extends ElementoMenu {
 
     @Override
     public String toString() {
-        return Salida.SEPARADOR_FINO;
+        return Salida.SEPARADOR_FINO + System.lineSeparator();
     }
 }

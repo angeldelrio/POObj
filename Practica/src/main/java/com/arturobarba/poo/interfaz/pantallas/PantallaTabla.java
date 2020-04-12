@@ -1,6 +1,7 @@
 package com.arturobarba.poo.interfaz.pantallas;
 
 import com.arturobarba.poo.Fabrica;
+import com.arturobarba.poo.interfaz.Interfaz;
 import com.arturobarba.poo.interfaz.Pantalla;
 import com.arturobarba.poo.interfaz.pantallas.tablas.Tabla;
 import com.arturobarba.poo.modelo.Identificable;
@@ -21,7 +22,9 @@ public class PantallaTabla<T extends Identificable> implements Pantalla {
 
     @Override
     public void mostrar() {
-        tabla.mostrarTabla();
+        if (tabla.mostrarTabla() == null) {
+            Interfaz.salirPantallaActual();
+        }
     }
 
     @Override

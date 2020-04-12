@@ -1,5 +1,6 @@
 package com.arturobarba.poo.interfaz;
 
+import com.arturobarba.poo.utils.StringUtils;
 import java.util.*;
 /**
  * Write a description of class Entrada here.
@@ -15,7 +16,8 @@ public class Entrada
     }
 
     public static Integer getInt() {
-        String valor = getString();
+        String valor = lector.next();
+        lector.nextLine();
         Integer valorEntero;
         try {
             valorEntero = Integer.valueOf(valor);
@@ -27,7 +29,8 @@ public class Entrada
     }
 
     public static Float getFloat() {
-        String valor = getString();
+        String valor = lector.next();
+        lector.nextLine();
         Float valorFloat;
         try {
             valor = valor.replace(",", ".");
@@ -41,5 +44,17 @@ public class Entrada
 
     public static String getString() {
         return lector.nextLine();
+    }
+
+    public static boolean confirmar(String enunciado) {
+        Salida.println(String.format("%s s/N", enunciado));
+        String respuesta = Entrada.getString();
+
+        return !StringUtils.estaEnBlanco(respuesta) && "s".equalsIgnoreCase(respuesta);
+    }
+
+    public static void pulseCualquierTeclaParaContinuar() {
+        Salida.println("Presione cualquier tecla para continuar...");
+        getString();
     }
 }

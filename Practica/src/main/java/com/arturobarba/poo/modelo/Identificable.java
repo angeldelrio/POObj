@@ -18,4 +18,15 @@ public abstract class Identificable {
     public String toString() {
         return String.format("#%s", getId());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Identificable) {
+            if (getId() != null && ((Identificable) o).getId() != null) {
+                return getId().equals(((Identificable) o).getId());
+            }
+        }
+
+        return false;
+    }
 }

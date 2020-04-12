@@ -1,8 +1,8 @@
 package com.arturobarba.poo.modelo.persona;
 
+import static com.arturobarba.poo.utils.StringUtils.estaEnBlanco;
+import static com.arturobarba.poo.utils.StringUtils.normalizarEnum;
 import com.arturobarba.poo.modelo.Identificable;
-import com.arturobarba.poo.modelo.Representable;
-import static com.arturobarba.poo.utils.StringUtils.*;
 
 /**
  * Abstract class Persona - write a description of the class here
@@ -10,7 +10,7 @@ import static com.arturobarba.poo.utils.StringUtils.*;
  * @author: 
  * Date: 
  */
-public abstract class Persona extends Identificable implements Representable
+public abstract class Persona extends Identificable
 {
     public enum TipoPersona {
         CLIENTE, EMPLEADO;

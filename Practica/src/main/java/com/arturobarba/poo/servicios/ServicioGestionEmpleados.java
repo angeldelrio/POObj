@@ -3,6 +3,7 @@ package com.arturobarba.poo.servicios;
 import com.arturobarba.poo.modelo.FactoriaRepositorios;
 import com.arturobarba.poo.modelo.Repositorio;
 import com.arturobarba.poo.modelo.persona.empleado.Empleado;
+import com.arturobarba.poo.modelo.persona.empleado.criteriosbusqueda.CriterioBusquedaPorTipo;
 import java.util.List;
 
 public class ServicioGestionEmpleados {
@@ -30,6 +31,10 @@ public class ServicioGestionEmpleados {
 
     public List<Empleado> listar() {
         return repositorioEmpleado.obtenerTodos();
+    }
+
+    public List<Empleado> buscarPorTipo(Class<? extends Empleado> tipo) {
+        return repositorioEmpleado.buscar(new CriterioBusquedaPorTipo(tipo));
     }
 
 }

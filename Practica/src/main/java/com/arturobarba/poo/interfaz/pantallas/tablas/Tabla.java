@@ -21,4 +21,7 @@ public interface Tabla<T extends Identificable> {
 
     void setModelos(List<T> modelos);
 
+    void setSoloMostrarDatos(boolean soloMostrarDatos);
+    boolean soloMostrarDatos();
+
 }
